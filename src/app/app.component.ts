@@ -5,6 +5,7 @@
  */
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
+import { createConnection, Connection } from "typeorm";
 
 @Component({
   selector: 'ngx-app',
@@ -14,6 +15,12 @@ import { AnalyticsService } from './@core/utils/analytics.service';
 export class AppComponent implements OnInit {
 
   constructor(private analytics: AnalyticsService) {
+    //initialize connection
+    createConnection().then(connection => {
+      console.log("Database connection successful");
+      //add routes
+
+    }).catch(error => console.log(error))
   }
 
   ngOnInit() {

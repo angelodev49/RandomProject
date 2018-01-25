@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from '../register/register.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [{
   path: '',
@@ -15,16 +14,12 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
-      path: 'home',
-      component: HomeComponent,
-    },
-    {
       path: 'register',
       component: RegisterComponent,
     },
     {
       path: '',
-      redirectTo: 'home',
+      redirectTo: 'dashboard',
       pathMatch: 'full',
     },
   ],
